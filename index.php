@@ -10,9 +10,9 @@
     <h2>Search Books</h2>
     <form method="get" class="search-form">
         <label for="search">Search:</label>
-            <input type="text" name="search" id="search" value="<?php if (isset($_GET['search'])) echo $_GET['search']; ?>">
+        <input type="text" name="search" id="search" value="<?php if (isset($_GET['search'])) echo $_GET['search']; ?>">
         <button type="submit">Search</button>
-        <button type="submit" name="create" class="create-book-button">Create Book</button>
+        <a href="create_book.php" class="create-book-button" >Create Book</a>
     </form>
 
     <h2>Book List</h2>
@@ -41,7 +41,7 @@
                 }
             }
         } else {
-            $searchResults = $books; 
+            $searchResults = $books;
         }
 
         foreach ($searchResults as $index => $book) {
@@ -52,7 +52,7 @@
             echo '<td>' . $book['pages'] . '</td>';
             echo '<td>' . $book['isbn'] . '</td>';
             echo '<td>
-                    <form method="get">
+                    <form method="get" action="edit_book.php"> <!-- Updated: Added action attribute -->
                         <input type="hidden" name="edit" value="' . $index . '">
                         <button type="submit">Edit</button>
                     </form>

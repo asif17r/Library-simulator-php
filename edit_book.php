@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION['editIndex'])) {
-    $editIndex = $_SESSION['editIndex'];
+if (isset($_GET['edit'])) {
+    $editIndex = $_GET['edit']; // Get the book index from the URL parameter
 
     $books = [];
 
@@ -12,7 +12,6 @@ if (isset($_SESSION['editIndex'])) {
 
     $bookToEdit = $books[$editIndex];
 } else {
-    
     echo "No book selected for editing.";
     exit();
 }
@@ -33,7 +32,6 @@ if (isset($_POST['title']) && isset($_POST['author']) && isset($_POST['available
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>

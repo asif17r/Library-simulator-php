@@ -19,5 +19,12 @@
         "available": false,
         "pages": 457,
         "isbn": 9785267006323
+    },
+    {
+        "title": "Data Structure And Algorithm",
+        "author": "Asif",
+        "available": true,
+        "pages": "1000",
+        "isbn": "01630170074"
     }
 ]
