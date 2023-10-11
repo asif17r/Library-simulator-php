@@ -1,131 +1,140 @@
-/* Reset some default browser styles */
-body, h1, h2, form, table {
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
+#edit-book-title {
     background-color: #333;
     color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-h2 {
+    padding: 20px;
+    text-align: center;
+    margin: 30px 0;
     font-size: 24px;
-    margin: 10px 0;
-    color: #0073e6;
 }
 
 form {
-    background-color: #333;
+    width: 60%;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], button {
+input[type="text"],
+input[type="number"],
+input[type="radio"],
+button[type="submit"] {
+    margin: 10px 0;
     padding: 10px;
-    margin: 5px;
-    border: 1px solid #0073e6;
-    border-radius: 3px;
     width: 100%;
-    color: #fff;
-    background-color: #444;
-    transition: background-color 0.3s, border-color 0.3s;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-input[type="text"]:focus, button:focus {
-    background-color: #0073e6;
-    border-color: #0073e6;
+input[type="text"],
+input[type="number"] {
+    font-size: large;
+    height: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+input[type="radio"] {
+    margin: 0 5px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-container label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.radio-container input[type="radio"] {
+    margin: 0;
+}
+
+input[type="number"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+button[type="submit"] {
+    background-color: #333;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
 }
 
 table {
     width: 100%;
-    margin-top: 20px;
+    margin: 0 auto;
     border-collapse: collapse;
-    background-color: #444;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #0073e6;
-    color: #fff;
-}
-
-tr:nth-child(even) {
+table th {
+    text-align: center;
     background-color: #333;
+    color: #fff;
+    padding: 10px;
 }
 
-/* Style the search bar */
-#search {
-    width: 100%;
+table tr {
+    background-color: #f4f4f4;
 }
 
-/* Style the search button */
-button[type="submit"] {
-    background-color: #0073e6;
+table td {
+    text-align: center;
+    padding: 10px;
+}
+
+form.search-form {
+    text-align: center;
+    margin: 0;
+    width: 60%;
+    padding: 20px;
+   
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-book-button {
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px;
 }
 
-button[type="submit"]:hover {
-    background-color: #005bb8;
+.create-book-button:hover {
+    background-color: #555;
 }
 
-/* Style the "Save" button */
-form button[type="submit"] {
-    background-color: #00cc99;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+form.search-form input[type="text"] {
+    width: 70%;
+    padding: 10px;
 }
 
-form button[type="submit"]:hover {
-    background-color: #00a87d;
-}
-
-/* Basic animation for buttons */
-button[type="submit"], form button[type="submit"] {
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    form {
-        width: 80%;
-        margin: 0 auto;
-    }
+form.search-form button[type="submit"] {
+    width: auto;
+    padding: 10px;
+    flex: 0 0 auto;
 }
