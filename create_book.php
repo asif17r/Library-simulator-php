@@ -9,7 +9,7 @@
     <form method="post" action="create_book_handler.php">
         <label for="title">Title:</label>
         <input type="text" name="title" required><br>
-        <label for="author">Author:</label>
+        <label for "author">Author:</label>
         <input type="text" name="author" required><br>
         <label for="available">Available:</label>
         <div class="radio-container">

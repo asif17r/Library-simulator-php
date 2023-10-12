@@ -12,7 +12,7 @@
         <label for="search">Search:</label>
         <input type="text" name="search" id="search" value="<?php if (isset($_GET['search'])) echo $_GET['search']; ?>">
         <button type="submit">Search</button>
-        <a href="create_book.php" class="create-book-button" >Create Book</a>
+        <a href="create_book.php" class="create-book-button" style="text-decoration: none;">Create Book</a>
     </form>
 
     <h2>Book List</h2>
@@ -44,6 +44,20 @@
             $searchResults = $books;
         }
 
+        if (isset($_POST['delete'])) {
+            $deleteIndex = $_POST['delete'];
+
+            if (isset($searchResults[$deleteIndex])) {
+                unset($searchResults[$deleteIndex]);
+
+                // Reindex the array
+                $searchResults = array_values($searchResults);
+
+                // Save the updated list of books
+                file_put_contents('books.json', json_encode($searchResults, JSON_PRETTY_PRINT));
+            }
+        }
+
         foreach ($searchResults as $index => $book) {
             echo '<tr>';
             echo '<td>' . $book['title'] . '</td>';
@@ -52,7 +66,7 @@
             echo '<td>' . $book['pages'] . '</td>';
             echo '<td>' . $book['isbn'] . '</td>';
             echo '<td>
-                    <form method="get" action="edit_book.php"> <!-- Updated: Added action attribute -->
+                    <form method="get" action="edit_book.php">
                         <input type="hidden" name="edit" value="' . $index . '">
                         <button type="submit">Edit</button>
                     </form>
